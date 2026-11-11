@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HappyMarket | Tu tienda online</title>
+    <!-- Favicon profesional -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236366f1%22 stroke-width=%222.5%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z%22></path><line x1=%223%22 y1=%226%22 x2=%2221%22 y2=%226%22></line><path d=%22M16 10a4 4 0 0 1-8 0%22></path></svg>">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <header class="encabezado">
         <div class="barra-superior">
-            <h1 class="logo">🛍️ HappyMarket</h1>
+            <h1 class="logo">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px; color:#818cf8;"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                Happy<span style="color: #34d399;">Market</span>
+            </h1>
 
             <div class="busqueda">
                 <input
@@ -37,21 +42,21 @@
         </div>
 
         <nav class="categorias">
-            <button class="activo" onclick="filtrarCategoria('todos')">🌐 Todos</button>
-            <button onclick="filtrarCategoria('supermercado')">🥦 Supermercado</button>
-            <button onclick="filtrarCategoria('cuidadopersonal')">🧼 Cuidado Personal</button>
-            <button onclick="filtrarCategoria('tecnologia')">💻 Tecnología</button>
-            <button onclick="filtrarCategoria('ropa')">👕 Ropa</button>
-            <button onclick="filtrarCategoria('videojuegos')">🎮 Videojuegos</button>
-            <button onclick="filtrarCategoria('hogar')">Modern Hogar</button>
+            <button class="activo" onclick="filtrarCategoria('todos', this)">🌐 Todos</button>
+            <button onclick="filtrarCategoria('supermercado', this)">🥦 Supermercado</button>
+            <button onclick="filtrarCategoria('cuidadopersonal', this)">🧼 Cuidado Personal</button>
+            <button onclick="filtrarCategoria('tecnologia', this)">💻 Tecnología</button>
+            <button onclick="filtrarCategoria('ropa', this)">👕 Ropa</button>
+            <button onclick="filtrarCategoria('videojuegos', this)">🎮 Videojuegos</button>
+            <button onclick="filtrarCategoria('hogar', this)">🏠 Hogar</button>
         </nav>
     </header>
 
     <section class="banner">
         <div class="banner-contenido">
-            <span class="etiqueta">MÁS DE 100 PRODUCTOS</span>
+            <span class="etiqueta">MÁS DE 80 PRODUCTOS</span>
             <h2>¡Tu súper completo en un solo lugar!</h2>
-            <p>Desde tecnología hasta la lista de compras del hogar y supermercado.</p>
+            <p>Desde tecnología de punta hasta la lista de compras del hogar y supermercado.</p>
             <button onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">
                 Explorar catálogo
             </button>
@@ -60,9 +65,9 @@
     </section>
 
     <section class="beneficios">
-        <div>📦 <strong>Envíos rápidos</strong><span>A todo el pais</span></div>
+        <div>📦 <strong>Envíos rápidos</strong><span>A todo el país</span></div>
         <div>🛡️ <strong>Memoria Local</strong><span>Datos guardados</span></div>
-        <div>⭐ <strong>100 Artículos</strong><span>Catálogo masivo</span></div>
+        <div>⭐ <strong>Catálogo Masivo</strong><span>Variedad única</span></div>
     </section>
 
     <main>
@@ -130,8 +135,11 @@
     <div id="toast" class="toast">¡Acción realizada con éxito!</div>
 
     <footer>
-        <h2 class="logo-footer">🛍️ HappyMarket</h2>
-        <p>Tu tienda de demostración favorita con 100 productos.</p>
+        <h2 class="logo-footer" style="display:flex; align-items:center; justify-content:center; gap:8px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#818cf8;"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            HappyMarket
+        </h2>
+        <p>Tu tienda de demostración favorita con más de 80 productos.</p>
         <p>© 2026 HappyMarket - Proyecto escolar</p>
     </footer>
 
