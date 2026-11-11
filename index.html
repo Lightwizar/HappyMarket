@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HappyMarket | Tu tienda online</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="encabezado">
+        <div class="barra-superior">
+            <h1 class="logo">🛍️ HappyMarket</h1>
+
+            <div class="busqueda">
+                <input
+                    type="text"
+                    id="buscador"
+                    list="sugerencias-productos"
+                    placeholder="¿Qué buscas hoy? (Ej: manzana, teléfono, café...)"
+                    autocomplete="off"
+                >
+                <datalist id="sugerencias-productos">
+                    <option value="Audífonos">
+                    <option value="Manzanas">
+                    <option value="Café">
+                    <option value="Perfume">
+                    <option value="Camiseta">
+                    <option value="Teclado">
+                </datalist>
+                <button id="btn-buscar">🔍</button>
+            </div>
+
+            <button class="boton-carrito" onclick="mostrarCarrito()">
+                🛒 Carrito (<span id="cantidad">0</span>)
+            </button>
+        </div>
+
+        <nav class="categorias">
+            <button class="activo" onclick="filtrarCategoria('todos')">🌐 Todos</button>
+            <button onclick="filtrarCategoria('supermercado')">🥦 Supermercado</button>
+            <button onclick="filtrarCategoria('cuidadopersonal')">🧼 Cuidado Personal</button>
+            <button onclick="filtrarCategoria('tecnologia')">💻 Tecnología</button>
+            <button onclick="filtrarCategoria('ropa')">👕 Ropa</button>
+            <button onclick="filtrarCategoria('videojuegos')">🎮 Videojuegos</button>
+            <button onclick="filtrarCategoria('hogar')">Modern Hogar</button>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <div class="banner-contenido">
+            <span class="etiqueta">MÁS DE 100 PRODUCTOS</span>
+            <h2>¡Tu súper completo en un solo lugar!</h2>
+            <p>Desde tecnología hasta la lista de compras del hogar y supermercado.</p>
+            <button onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">
+                Explorar catálogo
+            </button>
+        </div>
+        <div class="banner-icono">🛍️</div>
+    </section>
+
+    <section class="beneficios">
+        <div>📦 <strong>Envíos rápidos</strong><span>A todo el pais</span></div>
+        <div>🛡️ <strong>Memoria Local</strong><span>Datos guardados</span></div>
+        <div>⭐ <strong>100 Artículos</strong><span>Catálogo masivo</span></div>
+    </section>
+
+    <main>
+        <div class="zona-tienda">
+            <aside class="filtros">
+                <h3>Filtros</h3>
+
+                <label for="filtro-categoria">Categoría</label>
+                <select id="filtro-categoria">
+                    <option value="todos">Todas</option>
+                    <option value="supermercado">Supermercado</option>
+                    <option value="cuidadopersonal">Cuidado Personal</option>
+                    <option value="tecnologia">Tecnología</option>
+                    <option value="ropa">Ropa</option>
+                    <option value="videojuegos">Videojuegos</option>
+                    <option value="hogar">Hogar</option>
+                </select>
+
+                <label for="ordenar">Ordenar por</label>
+                <select id="ordenar">
+                    <option value="normal">Relevancia</option>
+                    <option value="menor">Menor precio</option>
+                    <option value="mayor">Mayor precio</option>
+                </select>
+            </aside>
+
+            <section class="catalogo">
+                <div class="titulo-productos">
+                    <h2>Catálogo disponible</h2>
+                    <span id="contador-resultados">Mostrando productos</span>
+                </div>
+                <div id="productos" class="productos"></div>
+            </section>
+        </div>
+
+        <section id="carrito" class="carrito">
+            <h2>🛒 Tu carrito de compras</h2>
+            <div id="lista-carrito"></div>
+            <div class="carrito-resumen">
+                <h3>Total a pagar: $<span id="total">0.00</span></h3>
+                <button class="btn-comprar" onclick="finalizarCompra()">Proceder al pago</button>
+            </div>
+            <p class="aviso">Tus datos se guardan automáticamente en este navegador.</p>
+        </section>
+    </main>
+
+    <!-- VENTANA MODAL DE DETALLE -->
+    <div id="modal-producto" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" onclick="cerrarModal()">&times;</span>
+            <div class="modal-grid">
+                <img id="modal-img" src="" alt="Producto">
+                <div class="modal-info">
+                    <span id="modal-cat" class="etiqueta-modal"></span>
+                    <h2 id="modal-titulo"></h2>
+                    <p id="modal-precio" class="modal-precio"></p>
+                    <p class="modal-desc">Producto garantizado de HappyMarket. Disponible para entrega inmediata con garantía de demostración escolar.</p>
+                    <button id="modal-btn-agregar" class="btn-agregar">🛒 Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTIFICACIÓN TOAST -->
+    <div id="toast" class="toast">¡Acción realizada con éxito!</div>
+
+    <footer>
+        <h2 class="logo-footer">🛍️ HappyMarket</h2>
+        <p>Tu tienda de demostración favorita con 100 productos.</p>
+        <p>© 2026 HappyMarket - Proyecto escolar</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
